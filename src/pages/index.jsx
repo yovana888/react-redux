@@ -9,9 +9,12 @@ import View from '../layout/View'
 
 const RouterApp = () => {
   return (
-    <View>
-      <BrowserRouter>
+    <BrowserRouter>
+      <View>
         <Switch>
+          <Route path="/hero/:id">
+            <HeroDetail />
+          </Route>
           <Route path="/hero">
             <Hero />
           </Route>
@@ -19,8 +22,8 @@ const RouterApp = () => {
             <Home />
           </Route>
         </Switch>
-      </BrowserRouter>
-    </View>
+      </View>
+    </BrowserRouter>
   )
 }
 

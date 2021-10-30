@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './style.scss'
 
@@ -10,10 +11,10 @@ const Header = () => {
       </div>
       <div className="l_header_menu">
         <div>
-          <p>Home</p>
+          <Link to="/">Home</Link>
         </div>
         <div>
-          <p>Heros</p>
+          <Link to="/hero">Heros</Link>
         </div>
         <div>
           <p>Otros</p>
@@ -24,3 +25,29 @@ const Header = () => {
 }
 
 export default Header
+
+
+/*
+
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+                                          |
+
+*/
