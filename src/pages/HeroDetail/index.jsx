@@ -1,5 +1,7 @@
 import React from 'react'
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams, useLocation, Redirect } from 'react-router-dom'
+
+import './style.scss'
 
 const HeroDetail = () => {
 
@@ -10,13 +12,21 @@ const HeroDetail = () => {
 
   const { searchParams } = new URL(window.location.href);
   const hero = searchParams.get("hero");
+  const fullName = searchParams.get("full-name");
   const image = searchParams.get("image");
 
-  console.log('hero', hero)
-  console.log('image', image)
+  // console.log('hero', hero)
+  // console.log('image', image)
+
+  if (!hero && !image) {
+    return <Redirect to="/hero" />
+  }
+
   return (
-    <div>
-      HeroDetail
+    <div className="p_hero_detail__wrapper">
+      <h3>{hero}</h3>
+      <p>{fullName}</p>
+      <img src={image} alt="img" />
     </div>
   )
 }

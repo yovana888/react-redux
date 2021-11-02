@@ -1,0 +1,39 @@
+{
+  "personas": [
+    {
+      "id": 1,
+      "nombre": "Pepito",
+      "apellidos": "Marquez De la Torre",
+      "edad": "21",
+      "ciudad": "Ica"
+    },
+    {
+      "id": 2,
+      "nombre": "Pepito",
+      "apellidos": "Marquez De la Torre",
+      "edad": "21",
+      "ciudad": "Ica"
+    },
+    {
+      "nombre": "Juan",
+      "apellidos": "Diaz",
+      "edad": "23",
+      "ciudad": "Lima",
+      "id": 3
+    },
+    {
+      "nombre": "Luis",
+      "apellidos": "Diaz",
+      "edad": "23",
+      "ciudad": "Piura",
+      "id": 4
+    },
+    {
+      "nombre": "Gregorio",
+      "apellidos": "Diaz",
+      "edad": "23",
+      "ciudad": "Piura",
+      "id": 5
+    }
+  ]
+}

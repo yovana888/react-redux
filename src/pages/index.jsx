@@ -1,9 +1,10 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import Hero from './Hero'
 import HeroDetail from './HeroDetail'
 import Home from './Home'
+import NotFound from './NotFound'
 
 import View from '../layout/View'
 
@@ -12,14 +13,22 @@ const RouterApp = () => {
     <BrowserRouter>
       <View>
         <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Redirect to="/home" />}
+          />
+          <Route path="/home">
+            <Home />
+          </Route>
           <Route path="/hero/:id">
             <HeroDetail />
           </Route>
           <Route path="/hero">
             <Hero />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route>
+            <NotFound />
           </Route>
         </Switch>
       </View>
