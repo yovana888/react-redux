@@ -21,6 +21,13 @@
       "edad": "23",
       "ciudad": "Piura",
       "id": 4
+    },
+    {
+      "nombres": "Roberto",
+      "apellidos": "Lopez",
+      "edad": "15",
+      "ciudad": "Trujillo",
+      "id": 5
     }
   ]
 }

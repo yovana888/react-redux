@@ -1,9 +1,13 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import './style.scss'
 
 const Header = () => {
+
+  const store = useSelector((s) => s.user)
+  console.log('store', store)
   return (
     <div className="l_header__wrapper">
       <div className="l_header__logo">
@@ -17,7 +21,8 @@ const Header = () => {
           <Link to="/hero">Heros</Link>
         </div>
         <div>
-          <p>Otros</p>
+          <p>Account: <br />
+          { store.selected.nombres }</p>
         </div>
       </div>
     </div>

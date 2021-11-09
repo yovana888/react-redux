@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+
+import { selectUser } from '../../actions/user/select'
 
 import Card from '../../components/Card'
 import FormControl from '../../components/FormControl'
@@ -10,12 +13,13 @@ const END_POINT = 'http://localhost:4000/personas'
 
 const Home = () => {
 
-  const [onlyRead, setOnlyRead] = useState(true)
   const [data, setData] = useState([])
   const [nombres, setNombre] = useState('')
   const [apellidos, setApellido] = useState('')
   const [edad, setEdad] = useState('')
   const [ciudad, setCiudad] = useState('')
+
+  const dispatch = useDispatch()
 
   const refButton = useRef(null)
   console.log('ref', refButton)
@@ -125,6 +129,13 @@ const Home = () => {
     setData(newData)
   }
 
+  const handleChoose = (e, user) => {
+    e.preventDefault()
+    console.log('userSelected', user)
+
+    dispatch(selectUser(user))
+  }
+
   console.log('AFUERA !!')
   const xData = useMemo(() => {
     console.log('Cambiando nombre')
@@ -170,6 +181,7 @@ const Home = () => {
               handleDelete={(e) => deletePersona(e, person.id)}
               handleUpdate={(e) => updatePerson(e, person.id)}
               handleOnlyRead={(e) => handleOnlyRead(e, person.id)}
+              handleChoose={(e) => handleChoose(e, person)}
               label1={{ label: "Nombres", value: person.nombres, edit: person.edit }}
               label2={{ label: "Apellidos", value: person.apellidos, edit: person.edit }}
               label3={{ label: "Edad", value: person.edad, edit: person.edit }}

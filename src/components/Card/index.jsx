@@ -12,7 +12,8 @@ const Card = ({
   label4,
   handleOnlyRead,
   handleUpdate,
-  handleDelete
+  handleDelete,
+  handleChoose
 }) => {
   return (
     <div className="c_card__wrapper">
@@ -48,6 +49,7 @@ const Card = ({
         <div className="c_card__content_buttons">
           <button onClick={handleOnlyRead}>{label1.edit ? 'Habilitar' : 'Desabilitar'}</button>
           <button onClick={handleUpdate} disabled={label1.edit} >Editar</button>
+          <button onClick={handleChoose}>Elegir</button>
           <button onClick={handleDelete}>Eliminar</button>
         </div>
       </form>
