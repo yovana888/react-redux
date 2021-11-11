@@ -7,7 +7,6 @@ import './style.scss'
 const Header = () => {
 
   const store = useSelector((s) => s.user)
-  console.log('store', store)
   return (
     <div className="l_header__wrapper">
       <div className="l_header__logo">

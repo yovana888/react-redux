@@ -5,6 +5,7 @@ import Hero from './Hero'
 import HeroDetail from './HeroDetail'
 import Home from './Home'
 import NotFound from './NotFound'
+import Persons from './Persons'
 
 import View from '../layout/View'
 
@@ -26,6 +27,9 @@ const RouterApp = () => {
           </Route>
           <Route path="/hero">
             <Hero />
+          </Route>
+          <Route path="/persons">
+            <Persons />
           </Route>
           <Route>
             <NotFound />
